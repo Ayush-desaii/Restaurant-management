@@ -1,5 +1,5 @@
 const express = require("express");
-const { pool, createTable } = require("./db")
+const { pool, createTables } = require("./db")
 
 const app = express();
 app.use(express.json());
@@ -33,6 +33,6 @@ app.get("/users", async (req, res) => {
 
 // Initialize Database and Start Server
 (async () => {
-  await createTable();
+  await createTables();
   app.listen(3000, () => console.log("Server running on port 3000"));
 })();
