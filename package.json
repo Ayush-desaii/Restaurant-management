@@ -1,16 +1,17 @@
 {
-  "name": "restaurent",
+  "name": "restaurant-management-system",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic structure for a restaurant management system",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
