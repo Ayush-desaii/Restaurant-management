@@ -35,5 +35,18 @@ route.get("/:id", async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+
+route.post("/mobile", async (req, res) => {
+    const { mobileNo } = req.body;
+    try {
+      const newUser = await pool.query(
+        "SELECT * FROM userMaster WHERE mobileNo = $1",
+        [mobileNo]
+      );
+      res.json(newUser.rows[0]);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
   
 module.exports = route
